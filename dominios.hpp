@@ -87,10 +87,12 @@ public:
     Data(string codigo);
 };
 
-class Duracao{
+lass Duracao{
 private:
     int codigo;
-    void validar(int codigo);
+    const static int horaMin = 1;
+    const static int horaMax = 48;
+    void validar(int codigo) throw(invalid_argument);
     void setDuracao(int codigo);
 public:
     int getDuracao();
