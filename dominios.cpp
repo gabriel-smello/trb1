@@ -41,9 +41,6 @@ int Bagagem::getBagagem(){
 }
 
 void Bagagem::validar(int codigo) throw(invalid_argument){
-    if(!isdigit(codigo)){
-        throw invalid_argument("Apenas numeros sao necessarios em Bagagens.")
-    }
     if(codigo < 0 || codigo > maxBagagem){
         throw invalid_argument("Numero de bagagens nao permitido.");
     }
@@ -109,6 +106,7 @@ void CodigoReserva::setCodigoReserva(string codigo){
 }
 
 CodigoReserva::CodigoReserva(string codigo){
+    validar(codigo);
     setCodigoReserva(codigo);
 }
 
@@ -135,6 +133,7 @@ void Cidade::setCidade(string codigo){
 }
 
 Cidade::Cidade(string codigo){
+    validar(codigo);
     setCidade(codigo);
 }
 
@@ -191,7 +190,6 @@ void Cpf::validar(string codigo) throw(invalid_argument){
         }
         i++;
     }
-
     j = 10;
     i = 0;
     while(i < 9){
@@ -203,7 +201,6 @@ void Cpf::validar(string codigo) throw(invalid_argument){
     if(digito1 == 10){
         digito1 = 0;
     }
-
     j = 11;
     i = 0;
     while(i < 10){
@@ -215,7 +212,6 @@ void Cpf::validar(string codigo) throw(invalid_argument){
     if(digito2 == 10){
         digito2 = 0;
     }
-
     if(digito1 != codigo[9] || digito2 != codigo[10]){
         throw invalid_argument("CPF invalido.");
     }
@@ -315,13 +311,21 @@ string Nome::getNome(){
     }
 
 // Metodos classe dominio Preço
-    int Preco::getPreco(){
+    float Preco::getPreco(){
         return preco;
     }
 
-    void Preco::setPreco(int preco){
+    void Preco::setPreco(float preco){
+        validar(preco);
         this->preco = preco;
     }
+
+    void Preco::validar(float preco) throw(invalid_argument){
+        if(preco < minPreco || preco > maxPreco){
+            throw invalid_argument("Preco invalido");
+        }
+    }
+
 
 // Metodos classe dominio Telefone
     string Telefone::getTelefone(){
@@ -329,7 +333,31 @@ string Nome::getNome(){
     }
 
     void Telefone::setTelefone(string numTelefone){
+        validar(numTelefone);
         this->numTelefone = numTelefone;
+    }
+
+    void Telefone::validar(string numTelefone) throw(invalid_argument){
+        int i;
+        if(numTelefone.length() != 13){
+            throw invalid_argument("Argumento de tamanho invalido.");
+        }
+        for(i = 0; i < 13; i++){
+            if(numTelefone[i] < 48 || numTelefone[i] > 57){ //verificando se o caracter é um numero(0-9).
+                throw invalid_argument("Caracter invalido");
+            }
+        }
+        if(numTelefone[0] == '0' && numTelefone[1] == '0'){
+            throw invalid_argument("Codigo invalido");
+        }
+        if(numTelefone[2] == '0' && numTelefone[3] == '0'){
+            throw invalid_argument("Codigo invalido");
+        }
+        for(i=4; numTelefone[i] == '0'; i++){
+            if(i == 12){ //Ao chegar no final do numero de telefone e todos caracteres = 0
+                throw invalid_argument("Telefone invalido");
+            }
+        }
     }
 
 // Metodos classe dominio Senha
@@ -338,7 +366,27 @@ string Nome::getNome(){
     }
 
     void Senha::setSenha(string senha){
+        validar(senha);
         this->senha = senha;
+    }
+
+        void Senha::validar(string senha) throw(invalid_argument){
+        int i, j;
+
+        if(senha.length() != tamanhoSenha){
+            throw invalid_argument("Argumento de tamanho invalido");
+        }
+        for(i = 0; i < tamanhoSenha; i++){
+            if(senha[i] < 35 || (senha[i]>38 && senha[i]<48) || (senha[i]>57 && senha[i]<65) || (senha[i]>90 && senha[i]<97) || senha[i]>122){
+               //Intervalos de caracteres da tabela ascii nao permitidos.
+                throw invalid_argument("Caracter nao permitido");
+            }
+            for(j = i+1; j < tamanhoSenha; j++){
+                if(senha[i] == senha[j]){ //verificando se os proximos caracteres sao iguais ao atual
+                    throw invalid_argument("Caracter repetido");
+                }
+            }
+        }
     }
 
 // Metodos classe dominio Vagas
