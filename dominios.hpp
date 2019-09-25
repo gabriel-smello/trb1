@@ -67,10 +67,10 @@ public:
     Cidade(string codigo);
 };
 
-class Cpf{
+lass Cpf{
 private:
     string codigo;
-    void validar(string codigo);
+    void validar(string codigo) throw(invalid_argument);
     void setCpf(string codigo);
 public:
     string getCpf();
