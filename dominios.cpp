@@ -236,11 +236,18 @@ void Duracao::setDuracao(int codigo){
 }
 
 Duracao::Duracao(int codigo){
+    validar(codigo);
     setDuracao(codigo);
 }
 
 int Duracao::getDuracao(){
     return codigo;
+}
+
+void Duracao::validar(int codigo) throw(invalid_argument){
+    if(codigo < horaMin || codigo > horaMax){
+        throw invalid_argument("Hora nao permitida.");
+    }
 }
 
 //Implementaçao para a classe Estado
