@@ -11,6 +11,7 @@ void Assento::setAssento(char codigo){
 }
 
 Assento::Assento(char codigo){
+        validar(codigo);
         setAssento(codigo);
 }
 
@@ -31,6 +32,7 @@ void Bagagem::setBagagem(int codigo){
 }
 
 Bagagem::Bagagem(int codigo){
+    validar(codigo);
     setBagagem(codigo);
 }
 
@@ -50,6 +52,7 @@ void CodigoBanco::setCodigoBanco(string codigo){
 }
 
 CodigoBanco::CodigoBanco(string codigo){
+    validar(codigo);
     setCodigoBanco(codigo);
 }
 
@@ -76,6 +79,7 @@ void CodigoCarona::setCodigoCarona(string codigo){
 }
 
 CodigoCarona::CodigoCarona(string codigo){
+    validar(codigo);
     setCodigoCarona(codigo);
 }
 
@@ -102,6 +106,7 @@ void CodigoReserva::setCodigoReserva(string codigo){
 }
 
 CodigoReserva::CodigoReserva(string codigo){
+    validar(codigo);
     setCodigoReserva(codigo);
 }
 
@@ -128,6 +133,7 @@ void Cidade::setCidade(string codigo){
 }
 
 Cidade::Cidade(string codigo){
+    validar(codigo);
     setCidade(codigo);
 }
 
@@ -164,11 +170,51 @@ void Cpf::setCpf(string codigo){
 }
 
 Cpf::Cpf(string codigo){
+    validar(codigo);
     setCpf(codigo);
 }
 
 string Cpf::getCpf(){
     return codigo;
+}
+
+void Cpf::validar(string codigo) throw(invalid_argument){
+    int i = 0, digito1 = 0, digito2 = 0, j;
+
+    if(codigo.length() != 11){
+        throw invalid_argument("O CPF deve conter 11 digitos.");
+    }
+    while(i < 11){
+        if(!isdigit(codigo[i])){
+            throw invalid_argument("O CPF deve conter apenas numeros.");
+        }
+        i++;
+    }
+    j = 10;
+    i = 0;
+    while(i < 9){
+        digito1 = digito1 + ((codigo[i] - 48) * j);
+        j--;
+        i++;
+    }
+    digito1 = (digito1 * 10) % 11;
+    if(digito1 == 10){
+        digito1 = 0;
+    }
+    j = 11;
+    i = 0;
+    while(i < 10){
+        digito2 = digito2 + ((codigo[i]-48) * j);
+        j--;
+        i++;
+    }
+    digito2 = (digito2 * 10) % 11;
+    if(digito2 == 10){
+        digito2 = 0;
+    }
+    if(digito1 != codigo[9] || digito2 != codigo[10]){
+        throw invalid_argument("CPF invalido.");
+    }
 }
 
 //Implementaçao para a classe Data
