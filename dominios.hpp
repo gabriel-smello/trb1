@@ -145,15 +145,19 @@ public:
 
 class Preco{
 private:
-    int preco;
+    float minPreco = 1.00;
+    float maxPreco = 5000.00;
+    float preco;
+    void validar(float preco) throw(invalid_argument);
 public:
-    void setPreco(int preco);
-    int getPreco();
+    void setPreco(float preco);
+    float getPreco();
 };
 
 class Telefone{
 private:
     string numTelefone;
+    void validar(string numTelefone) throw(invalid_argument);
 public:
     void setTelefone(string numTelefone);
     string getTelefone();
