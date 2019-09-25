@@ -41,6 +41,9 @@ int Bagagem::getBagagem(){
 }
 
 void Bagagem::validar(int codigo) throw(invalid_argument){
+    if(!isdigit(codigo)){
+        throw invalid_argument("Apenas numeros sao necessarios em Bagagens.")
+    }
     if(codigo < 0 || codigo > maxBagagem){
         throw invalid_argument("Numero de bagagens nao permitido.");
     }
