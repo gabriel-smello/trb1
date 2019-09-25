@@ -161,7 +161,9 @@ public:
 
 class Senha{
 private:
+    static const int tamanhoSenha = 5;
     string senha;
+    void validar(string senha) throw(invalid_argument);
 public:
     void setSenha(string senha);
     string getSenha();
