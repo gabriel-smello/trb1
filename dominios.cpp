@@ -245,6 +245,9 @@ int Duracao::getDuracao(){
 }
 
 void Duracao::validar(int codigo) throw(invalid_argument){
+    if(!isdigit(codigo)){
+        throw invalid_argument("Para hora(s) é necessario apenas numeros.");
+    }
     if(codigo < horaMin || codigo > horaMax){
         throw invalid_argument("Hora nao permitida.");
     }
