@@ -255,13 +255,21 @@ string Nome::getNome(){
     }
 
 // Metodos classe dominio Preço
-    int Preco::getPreco(){
+    float Preco::getPreco(){
         return preco;
     }
 
-    void Preco::setPreco(int preco){
+    void Preco::setPreco(float preco){
+        validar(preco);
         this->preco = preco;
     }
+
+    void Preco::validar(float preco) throw(invalid_argument){
+        if(preco < minPreco || preco > maxPreco){
+            throw invalid_argument("Preco invalido");
+        }
+    }
+
 
 // Metodos classe dominio Telefone
     string Telefone::getTelefone(){
@@ -269,7 +277,31 @@ string Nome::getNome(){
     }
 
     void Telefone::setTelefone(string numTelefone){
+        validar(numTelefone);
         this->numTelefone = numTelefone;
+    }
+
+    void Telefone::validar(string numTelefone) throw(invalid_argument){
+        int i;
+        if(numTelefone.length() != 13){
+            throw invalid_argument("Argumento de tamanho invalido.");
+        }
+        for(i = 0; i < 13; i++){
+            if(numTelefone[i] < 48 || numTelefone[i] > 57){ //verificando se o caracter é um numero(0-9).
+                throw invalid_argument("Caracter invalido");
+            }
+        }
+        if(numTelefone[0] == '0' && numTelefone[1] == '0'){
+            throw invalid_argument("Codigo invalido");
+        }
+        if(numTelefone[2] == '0' && numTelefone[3] == '0'){
+            throw invalid_argument("Codigo invalido");
+        }
+        for(i=4; numTelefone[i] == '0'; i++){
+            if(i == 12){ //Ao chegar no final do numero de telefone e todos caracteres = 0
+                throw invalid_argument("Telefone invalido");
+            }
+        }
     }
 
 // Metodos classe dominio Senha
