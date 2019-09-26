@@ -348,7 +348,7 @@ void Email::validar(string codigo) throw(invalid_argument){
 
     void Nome::validar(string codigo) throw(invalid_argument){
         int i;
-        if(codigo.length() < 1 || codigo.length() > 20){
+        if(codigo.length() < 1 || codigo.length() > maxNome){
             throw invalid_argument("Tamanho de argumento invalido.");
         }
         for(i=0 ; i<codigo.length() ; i++){
