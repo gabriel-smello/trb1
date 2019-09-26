@@ -112,7 +112,10 @@ public:
 class Email{
 private:
     string codigo;
-    void validar(string codigo);
+    const static int numMaxLocal = 20;
+    const static int numMaxDominio = 20;
+
+    void validar(string codigo) throw(invalid_argument);
     void setEmail(string codigo);
 public:
     string getEmail();
@@ -122,6 +125,7 @@ public:
 class Nome{
 private:
     string codigo;
+    const static int maxNome = 20;
     void validar(string codigo) throw(invalid_argument);
     void setNome(string codigo);
 public:
