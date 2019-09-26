@@ -80,7 +80,8 @@ public:
 class Data{
 private:
     string codigo;
-    void validar(string codigo);
+    const static int maxAno = 2099;
+    void validar(string codigo) throw(invalid_argument);
     void setData(string codigo);
 public:
     string getData();
