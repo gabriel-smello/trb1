@@ -102,7 +102,7 @@ public:
 class Estado{
 private:
     string codigo;
-    void Validar(string codigo);
+    void validar(string codigo) throw(invalid_argument);
     void setEstado(string codigo);
 public:
     string getEstado();
