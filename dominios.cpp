@@ -271,6 +271,7 @@ string Estado::getEstado(){
 
 //Implementacao para a classe Email
 void Email::setEmail(string codigo){
+    validar(codigo);
     this->codigo = codigo;
 }
 
@@ -281,6 +282,55 @@ Email::Email(string codigo){
 string Email::getEmail(){
     return codigo;
 }
+
+void Email::validar(string codigo) throw(invalid_argument){
+    int i, contChar = 0, contArroba = 0; //contadores
+    int arroba; //marcadores
+
+    if(codigo.length() > numMaxLocal+numMaxDominio+1  ||  codigo.length() < 3){
+        throw invalid_argument("Quantidade invalida de caracteres.");
+    }
+
+    for(i=0 ; i<codigo.length() ; i++){
+        if(codigo[i] == '@'){
+            arroba = i;
+            contArroba++;
+        }
+    }
+
+    if(contArroba != 1 ){
+        throw invalid_argument("Quantidade invalida de @.");
+    }
+
+    if(codigo[0] == '.' || codigo[arroba-1] == '.' || codigo[arroba+1] == '.'){
+        throw invalid_argument("Ponto em local invalido.");
+    }
+
+    for(i=0 ; i<codigo.length() ; i++){
+        if(codigo[i] == '.' && codigo[i+1] == '.'){
+            throw invalid_argument("Pontos em sequencia.");
+        }
+        if( isalpha(codigo[i]) || codigo[i] == '.' || isdigit(codigo[i])){
+            if(isdigit(codigo[i]) && i > arroba){
+                throw invalid_argument("O dominio nao pode conter numeros.");
+            }
+            contChar++;
+        } else {
+            if(codigo[i] == '@'){
+                if(contChar > numMaxLocal){
+                    throw invalid_argument("Quantidade invalida Local.");
+                }
+                contChar = 0;
+            }else{
+                throw invalid_argument ("Caracter invalido.");
+            }
+        }
+    }
+    if(contChar > numMaxDominio){
+        throw invalid_argument("Quantidade invalida Dominio.");
+    }
+}
+
 
 //Implementacao para a classe Nome
     void Nome::setNome(string codigo){
