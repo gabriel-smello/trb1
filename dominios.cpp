@@ -283,17 +283,33 @@ string Email::getEmail(){
 }
 
 //Implementacao para a classe Nome
-void Nome::setNome(string codigo){
-    this->codigo = codigo;
-}
+    void Nome::setNome(string codigo){
+        validar(codigo);
+        this->codigo = codigo;
+    }
 
-Nome::Nome(string codigo){
-    setNome(codigo);
-}
+    Nome::Nome(string codigo){
+        setNome(codigo);
+    }
 
-string Nome::getNome(){
-    return codigo;
-}
+    string Nome::getNome(){
+        return codigo;
+    }
+
+    void Nome::validar(string codigo) throw(invalid_argument){
+        int i;
+        if(codigo.length() < 1 || codigo.length() > 20){
+            throw invalid_argument("Tamanho de argumento invalido.");
+        }
+        for(i=0 ; i<codigo.length() ; i++){
+            if(!(codigo[i] == 32 || codigo[i] == 46 || (codigo[i]>=65 && codigo[i]<=90) || (codigo[i]>=97 && codigo[i]<=122))){
+                throw invalid_argument("Caracter invalido.");
+            }
+            if(codigo[i] == ' ' && codigo[i+1] == ' '){
+                throw invalid_argument("Espacamento duplo.");
+            }
+        }
+    }
 
 // Metodos classe dominio NumeroAgencia
     int NumeroAgencia::getNumeroAgencia(){
@@ -301,8 +317,44 @@ string Nome::getNome(){
     }
 
     void NumeroAgencia::setNumeroAgencia(int numeroAgencia){
+        validar(numeroAgencia);
         this->numeroAgencia = numeroAgencia;
     }
+
+    void NumeroAgencia::validar(int numeroAgencia) throw(invalid_argument){
+        int number = numeroAgencia;
+        int vetorNum[5]; //vetor que ira conter cada digito do numeroAgencia em ordem.
+        int soma = 0;
+        int i;
+
+         if(numeroAgencia > 99999){
+            throw invalid_argument("Quantidade invalida de digitos.");
+        }
+
+        for (int i = 4; i >= 0; i--) {
+            vetorNum[i] = number%10;
+            number /= 10;
+        }
+
+        //Utilizando o algoritimo de luhn para verificar o numeroAgencia
+        for(i=0; i<4; i=i+2){
+            soma += (vetorNum[i]*2)%10 + (vetorNum[i]*2)/10;
+        }
+        for(i=1; i<4; i=i+2){
+            soma += vetorNum[i];
+        }
+        if(soma%10 == 0){
+            if(vetorNum[4] != 0){
+                throw invalid_argument("Digito verificador nao corresponde");
+            }
+        }
+        else{
+            if(10 - soma%10 != vetorNum[4]){
+                throw invalid_argument("Digito verificador nao corresponde");
+            }
+        }
+    }
+
 
 // Metodos classe dominio NumeroConta
     int NumeroConta::getNumeroConta(){
@@ -310,8 +362,43 @@ string Nome::getNome(){
     }
 
     void NumeroConta::setNumeroConta(int numeroConta){
+        validar(numeroConta);
         this->numeroConta = numeroConta;
     }
+
+    void NumeroConta::validar(int numeroConta) throw(invalid_argument){
+        int number = numeroConta;
+        int vetorNum[7]; //vetor que ira conter cada digito do numeroConta em ordem.
+        int soma = 0;
+        int i;
+
+        if(numeroConta > 9999999){
+            throw invalid_argument("Quantidade invalida de digitos.");
+        }
+
+        for (int i = 6; i >= 0; i--) {
+            vetorNum[i] = number%10;
+            number /= 10;
+        }
+
+        //Utilizando o algoritimo de luhn para verificar o numeroConta
+        for(i=0; i<6; i=i+2){
+            soma += (vetorNum[i]*2)%10 + (vetorNum[i]*2)/10;
+        }
+        for(i=1; i<6; i=i+2){
+            soma += vetorNum[i];
+        }
+        if(soma%10 == 0){
+            if(vetorNum[6] != 0){
+                throw invalid_argument("Digito verificador nao corresponde");
+            }
+        }
+        else{
+            if(10 - soma%10 != vetorNum[6]){
+                throw invalid_argument("Digito verificador nao corresponde");
+            }
+        }
+    }    
 
 // Metodos classe dominio Preço
     float Preco::getPreco(){
