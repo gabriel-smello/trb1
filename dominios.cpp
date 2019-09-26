@@ -602,6 +602,7 @@ void Email::validar(string codigo) throw(invalid_argument){
     }
 
     void Vagas::setVagas(int numVagas){
+        validar(numVagas);
         this->numVagas = numVagas;
     }
 
