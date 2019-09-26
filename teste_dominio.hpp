@@ -4,6 +4,69 @@
 
 using namespace std;
 
+class TUNumeroConta {
+private:
+    const int VALOR_VALIDO   = 1111111;
+    const int VALOR_INVALIDO = 9832832;
+
+    NumeroConta *codigo;         // Referência para o objeto a ser testado.
+
+    int estado;             // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run();
+};
+
+class TUPreco {
+private:
+    const int VALOR_VALIDO   = 1677;
+    const int VALOR_INVALIDO = 93321;
+
+    Preco *codigo;         // Referência para o objeto a ser testado.
+
+    int estado;             // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run();
+};
+
+class TUTelefone {
+private:
+    const string VALOR_VALIDO   = "5511986756327";
+    const string VALOR_INVALIDO = "9300873178231";
+
+    Telefone *codigo;         // Referência para o objeto a ser testado.
+
+    int estado;             // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run();
+};
+
 class TUSenha {
 private:
     const string VALOR_VALIDO   = "$Enh4";
