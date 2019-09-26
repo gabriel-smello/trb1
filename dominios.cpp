@@ -258,6 +258,9 @@ void Duracao::validar(int codigo) throw(invalid_argument){
 
 //Implementaçao para a classe Estado
 void Estado::setEstado(string codigo){
+    validar(codigo);
+    codigo[0] = toupper(codigo[0]);
+    codigo[1] = toupper(codigo[1]);
     this->codigo = codigo;
 }
 
@@ -268,6 +271,22 @@ Estado::Estado(string codigo){
 string Estado::getEstado(){
     return codigo;
 }
+
+void Estado::validar(string codigo) throw(invalid_argument){
+    string UF = "00";
+    if(codigo.length() != 2){
+        throw invalid_argument("UF de tamanho invalido.");
+    }
+    UF[0] = toupper(codigo[0]);
+    UF[1] = toupper(codigo[1]);
+    if(!(   UF == "AC" || UF == "AL" || UF == "AP" || UF == "AM" || UF == "BA" || UF == "CE" || UF == "DF" || UF == "ES" ||
+            UF == "GO" || UF == "MA" || UF == "MT" || UF == "MS" || UF == "NG" || UF == "PA" || UF == "PB" || UF == "PR" ||
+            UF == "PE" || UF == "PI" || UF == "RJ" || UF == "RN" || UF == "RS" || UF == "RO" || UF == "RR" || UF == "SC" ||
+            UF == "SP" || UF == "SE" || UF == "TO" ) ){
+        throw invalid_argument("UF nao reconhecida.");
+    }
+}
+
 
 //Implementacao para a classe Email
 void Email::setEmail(string codigo){
