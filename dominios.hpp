@@ -87,7 +87,7 @@ public:
     Data(string codigo);
 };
 
-lass Duracao{
+class Duracao{
 private:
     int codigo;
     const static int horaMin = 1;
@@ -122,7 +122,7 @@ public:
 class Nome{
 private:
     string codigo;
-    void validar(string codigo);
+    void validar(string codigo) throw(invalid_argument);
     void setNome(string codigo);
 public:
     string getNome();
@@ -132,6 +132,7 @@ public:
 class NumeroAgencia{
 private:
     int numeroAgencia;
+    void validar(int numeroAgencia) throw(invalid_argument);
 public:
     void setNumeroAgencia(int numeroAgencia);
     int getNumeroAgencia();
@@ -140,6 +141,7 @@ public:
 class NumeroConta{
 private:
     int numeroConta;
+    void validar(int numeroConta) throw(invalid_argument);
 public:
     void setNumeroConta(int numeroConta);
     int getNumeroConta();
