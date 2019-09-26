@@ -222,6 +222,7 @@ void Cpf::validar(string codigo) throw(invalid_argument){
 
 //Implementaçao para a classe Data
 void Data::setData(string codigo){
+    validar(codigo);
     this->codigo = codigo;
 }
 
@@ -231,6 +232,53 @@ Data::Data(string codigo){
 
 string Data::getData(){
     return codigo;
+}
+
+void Data::validar(string codigo) throw(invalid_argument){
+    string dia = "00", mes = "00", ano = "0000";
+    int numDia, numMes, numAno;
+    int i;
+    if(codigo.length() != 10){
+        throw invalid_argument("Tamanho de data invalido.");
+    }
+    if(codigo[2] != '/' || codigo[5] != '/'){
+        throw invalid_argument("Formato de data invalido.");
+    }
+    dia[0] = codigo[0];
+    dia[1] = codigo[1];
+
+    mes[0] = codigo[3];
+    mes[1] = codigo[4];
+
+    ano[0] = codigo[6];
+    ano[1] = codigo[7];
+    ano[2] = codigo[8];
+    ano[3] = codigo[9];
+
+    numDia = (dia[0] - 48)*10 + (dia[1] - 48); //transformando char em int
+    numMes = (mes[0] - 48)*10 + (mes[1] - 48); //transformando char em int
+    numAno = (ano[0] - 48)*1000 + (ano[1] - 48)*100 + (ano[2] - 48)*10 + (ano[3] - 48);
+
+    if(numDia > 31 || numDia < 1){
+        throw invalid_argument("Dia invalido");
+    }
+    if(numMes > 12 || numDia < 1){
+        throw invalid_argument("Mes invalido");
+    }
+    if(numAno > maxAno || numAno < 2000){
+        throw invalid_argument("Ano invalido");
+    }
+    //verificacao fevereiro em ano bissexto
+    if(numMes == 2 && numAno%4 == 0){
+        if(numDia > 29){
+            throw invalid_argument("Dia invalido.");
+        }
+    }
+    if(numMes == 2 && numAno%4 != 0){
+        if(numDia > 28){
+            throw invalid_argument("Dia invalido.");
+        }
+    }
 }
 
 //implementaçao para a classe Duracao
