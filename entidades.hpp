@@ -65,5 +65,37 @@ public:
     void setNumeroConta(const NumeroConta&);
 };
 
+class Carona{
+private:
+        CodigoCarona codigo;
+        Cidade cidadeOrigem, cidadeDestino;
+        Estado estadoOrigem, estadoDestino;
+        Data data;
+        Duracao duracao;
+        Vagas vagas;
+        Preco preco;
+public:
+        Carona(){}
+        Carona(CodigoCarona, Cidade, Estado, Cidade, Estado, Data, Duracao, Vagas, Preco);
+        CodigoCarona getCodigoCarona() const;
+        void setCodigoCarona(const CodigoCarona&);
+        Cidade getCidadeOrigem() const;
+        void setCidadeOrigem(const Cidade&);
+        Estado getEstadoOrigem() const;
+        void setEstadoOrigem(const Estado&);
+        Cidade getCidadeDestino() const;
+        void setCidadeDestino(const Cidade&);
+        Estado getEstadoDestino() const;
+        void setEstadoDestino(const Estado&);
+        Data getData() const;
+        void setData(const Data&);
+        Duracao getDuracao() const;
+        void setDuracao(const Duracao&);
+        Vagas getVagas() const;
+        void setVagas(const Vagas&);
+        Preco getPreco() const;
+        void setPreco(const Preco&);
+};
+
 
 #endif // ENTIDADE_H
