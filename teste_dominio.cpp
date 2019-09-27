@@ -1,5 +1,478 @@
 #include "teste_dominio.hpp"
 
+// Definições de métodos da classe TUAssento
+void TUAssento::setUp(){
+    codigo = new Assento();
+    estado = SUCESSO;
+}
+
+void TUAssento::tearDown(){
+    delete codigo;
+}
+
+void TUAssento::testarCenarioSucesso(){
+    try{
+        codigo->setAssento(VALOR_VALIDO);
+        if (codigo->getAssento() != VALOR_VALIDO){
+            cout << "Falha no valor valido de Assento no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de Assento no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUAssento::testarCenarioFalha(){
+    try{
+        codigo->setAssento(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de Assento" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUAssento::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// Definições de métodos da classe TUBagagem
+void TUBagagem::setUp(){
+    codigo = new Bagagem();
+    estado = SUCESSO;
+}
+
+void TUBagagem::tearDown(){
+    delete codigo;
+}
+
+void TUBagagem::testarCenarioSucesso(){
+    try{
+        codigo->setBagagem(VALOR_VALIDO);
+        if (codigo->getBagagem() != VALOR_VALIDO){
+            cout << "Falha no valor valido de Bagagem no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de Bagagem no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUBagagem::testarCenarioFalha(){
+    try{
+        codigo->setBagagem(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de Bagagem" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUBagagem::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// Definições de métodos da classe TUCodigoBanco
+void TUCodigoBanco::setUp(){
+    codigo = new CodigoBanco();
+    estado = SUCESSO;
+}
+
+void TUCodigoBanco::tearDown(){
+    delete codigo;
+}
+
+void TUCodigoBanco::testarCenarioSucesso(){
+    try{
+        codigo->setCodigoBanco(VALOR_VALIDO);
+        if (codigo->getCodigoBanco() != VALOR_VALIDO){
+            cout << "Falha no valor valido de CodigoBanco no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de CodigoBanco no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUCodigoBanco::testarCenarioFalha(){
+    try{
+        codigo->setCodigoBanco(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de CodigoBanco" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUCodigoBanco::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// Definições de métodos da classe TUCodigoCarona
+void TUCodigoCarona::setUp(){
+    codigo = new CodigoCarona();
+    estado = SUCESSO;
+}
+
+void TUCodigoCarona::tearDown(){
+    delete codigo;
+}
+
+void TUCodigoCarona::testarCenarioSucesso(){
+    try{
+        codigo->setCodigoCarona(VALOR_VALIDO);
+        if (codigo->getCodigoCarona() != VALOR_VALIDO){
+            cout << "Falha no valor valido de CodigoCarona no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de CodigoCarona no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUCodigoCarona::testarCenarioFalha(){
+    try{
+        codigo->setCodigoCarona(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de CodigoCarona" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUCodigoCarona::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// Definições de métodos da classe TUCodigoReserva
+void TUCodigoReserva::setUp(){
+    codigo = new CodigoReserva();
+    estado = SUCESSO;
+}
+
+void TUCodigoReserva::tearDown(){
+    delete codigo;
+}
+
+void TUCodigoReserva::testarCenarioSucesso(){
+    try{
+        codigo->setCodigoReserva(VALOR_VALIDO);
+        if (codigo->getCodigoReserva() != VALOR_VALIDO){
+            cout << "Falha no valor valido de CodigoReserva no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de CodigoReserva no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUCodigoReserva::testarCenarioFalha(){
+    try{
+        codigo->setCodigoReserva(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de CodigoReserva" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUCodigoReserva::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// Definições de métodos da classe TUCidade
+void TUCidade::setUp(){
+    codigo = new Cidade();
+    estado = SUCESSO;
+}
+
+void TUCidade::tearDown(){
+    delete codigo;
+}
+
+void TUCidade::testarCenarioSucesso(){
+    try{
+        codigo->setCidade(VALOR_VALIDO);
+        if (codigo->getCidade() != VALOR_VALIDO){
+            cout << "Falha no valor valido de Cidade no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de Cidade no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUCidade::testarCenarioFalha(){
+    try{
+        codigo->setCidade(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de Cidade" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUCidade::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// Definições de métodos da classe TUCpf
+void TUCpf::setUp(){
+    codigo = new Cpf();
+    estado = SUCESSO;
+}
+
+void TUCpf::tearDown(){
+    delete codigo;
+}
+
+void TUCpf::testarCenarioSucesso(){
+    try{
+        codigo->setCpf(VALOR_VALIDO);
+        if (codigo->getCpf() != VALOR_VALIDO){
+            cout << "Falha no valor valido de Cpf no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de Cpf no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUCpf::testarCenarioFalha(){
+    try{
+        codigo->setCpf(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de Cpf" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUCpf::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// Definições de métodos da classe TUData
+void TUData::setUp(){
+    codigo = new Data();
+    estado = SUCESSO;
+}
+
+void TUData::tearDown(){
+    delete codigo;
+}
+
+void TUData::testarCenarioSucesso(){
+    try{
+        codigo->setData(VALOR_VALIDO);
+        if (codigo->getData() != VALOR_VALIDO){
+            cout << "Falha no valor valido de Data no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de Data no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUData::testarCenarioFalha(){
+    try{
+        codigo->setData(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de Data" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUData::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// Definições de métodos da classe TUDuracao
+void TUDuracao::setUp(){
+    codigo = new Duracao();
+    estado = SUCESSO;
+}
+
+void TUDuracao::tearDown(){
+    delete codigo;
+}
+
+void TUDuracao::testarCenarioSucesso(){
+    try{
+        codigo->setDuracao(VALOR_VALIDO);
+        if (codigo->getDuracao() != VALOR_VALIDO){
+            cout << "Falha no valor valido de Duracao no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de Duracao no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUDuracao::testarCenarioFalha(){
+    try{
+        codigo->setDuracao(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de Duracao" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUDuracao::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// Definições de métodos da classe TUDuracao
+void TUEstado::setUp(){
+    codigo = new Estado();
+    estado = SUCESSO;
+}
+
+void TUEstado::tearDown(){
+    delete codigo;
+}
+
+void TUEstado::testarCenarioSucesso(){
+    try{
+        codigo->setEstado(VALOR_VALIDO);
+        if (codigo->getEstado() != VALOR_VALIDO){
+            cout << "Falha no valor valido de Estado no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de Estado no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUEstado::testarCenarioFalha(){
+    try{
+        codigo->setEstado(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de Estado" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUEstado::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// Definições de métodos da classe TUEmail
+void TUEmail::setUp(){
+    codigo = new Email();
+    estado = SUCESSO;
+}
+
+void TUEmail::tearDown(){
+    delete codigo;
+}
+
+void TUEmail::testarCenarioSucesso(){
+    try{
+        codigo->setEmail(VALOR_VALIDO);
+        if (codigo->getEmail() != VALOR_VALIDO){
+            cout << "Falha no valor valido de Email no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de Email no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUEmail::testarCenarioFalha(){
+    try{
+        codigo->setEmail(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de Email" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUEmail::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
 // Definições de métodos da classe TUNome
 void TUNome::setUp(){
     codigo = new Nome();
