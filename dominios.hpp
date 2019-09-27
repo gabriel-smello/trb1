@@ -17,38 +17,46 @@ public:
 class Bagagem {
 private:
     int codigo;
+
     const static int maxBagagem = 4;
     void validar(int codigo) throw(invalid_argument);
 public:
-    void setBagagem(int codigo);
     int getBagagem();
+
+    void setBagagem(int codigo);
 };
 
 class CodigoBanco{
 private:
     string codigo;
+
     void validar(string codigo) throw(invalid_argument);
 public:
-    void setCodigoBanco(string codigo);
     string getCodigoBanco();
+
+    void setCodigoBanco(string codigo);
 };
 
 class CodigoCarona{
 private:
     string codigo;
+
     void validar(string codigo) throw(invalid_argument);
 public:
-    void setCodigoCarona(string codigo);
     string getCodigoCarona();
+
+    void setCodigoCarona(string codigo);
 };
 
 class CodigoReserva{
 private:
     string codigo;
+
     void validar(string codigo) throw(invalid_argument);
 public:
-    void setCodigoReserva(string codigo);
     string getCodigoReserva();
+
+    void setCodigoReserva(string codigo);
 };
 
 class Cidade{
@@ -56,8 +64,8 @@ private:
     string codigo;
     void validar(string codigo) throw(invalid_argument);
 public:
-    void setCidade(string codigo);
     string getCidade();
+    void setCidade(string codigo);
 };
 
 class Cpf{
@@ -65,8 +73,8 @@ private:
     string codigo;
     void validar(string codigo) throw(invalid_argument);
 public:
-    void setCpf(string codigo);
     string getCpf();
+    void setCpf(string codigo);
 };
 
 class Data{
@@ -75,8 +83,8 @@ private:
     const static int maxAno = 2099;
     void validar(string codigo) throw(invalid_argument);
 public:
-    void setData(string codigo);
     string getData();
+    void setData(string codigo);
 };
 
 class Duracao{
@@ -86,8 +94,8 @@ private:
     const static int horaMax = 48;
     void validar(int codigo) throw(invalid_argument);
 public:
-    void setDuracao(int codigo);
     int getDuracao();
+    void setDuracao(int codigo);
 };
 
 class Estado{
@@ -95,8 +103,8 @@ private:
     string codigo;
     void validar(string codigo) throw(invalid_argument);
 public:
-    void setEstado(string codigo);
     string getEstado();
+    void setEstado(string codigo);
 };
 
 class Email{
@@ -107,8 +115,9 @@ private:
 
     void validar(string codigo) throw(invalid_argument);
 public:
-    void setEmail(string codigo);
     string getEmail();
+
+    void setEmail(string codigo);
 };
 
 class Nome{
@@ -141,8 +150,8 @@ public:
 
 class Preco{
 private:
-    float minPreco = 1.00;
-    float maxPreco = 5000.00;
+    const static float minPreco = 1.00;
+    const static float maxPreco = 5000.00;
     float preco;
     void validar(float preco) throw(invalid_argument);
 public:
@@ -173,7 +182,7 @@ class Vagas{
 private:
     const static int maxVagas = 4;
     int numVagas;
-    void validar(int) throw(invalid_argument);
+    void validar(int numVagas) throw(invalid_argument);
 public:
     void setVagas(int numVagas);
     int getVagas();
