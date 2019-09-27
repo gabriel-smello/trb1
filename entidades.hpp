@@ -48,23 +48,6 @@ public:
         void setBagagem(const Bagagem&);
 };
 
-class Conta {
-private:
-    CodigoBanco banco;
-    NumeroAgencia agencia;
-    NumeroConta numero;
-public:
-    Conta(){}
-    Conta(CodigoBanco, NumeroAgencia, NumeroConta);
-
-    CodigoBanco getCodigoBanco() const;
-    void setCodigoBanco(const CodigoBanco&);
-    NumeroAgencia getNumeroAgencia() const;
-    void setNumeroAgencia(const NumeroAgencia&);
-    NumeroConta getNumeroConta() const;
-    void setNumeroConta(const NumeroConta&);
-};
-
 class Carona{
 private:
         CodigoCarona codigo;
@@ -96,6 +79,24 @@ public:
         Preco getPreco() const;
         void setPreco(const Preco&);
 };
+
+class Conta {
+private:
+    CodigoBanco banco;
+    NumeroAgencia agencia;
+    NumeroConta numero;
+public:
+    Conta(){}
+    Conta(CodigoBanco, NumeroAgencia, NumeroConta);
+
+    CodigoBanco getCodigoBanco() const;
+    void setCodigoBanco(const CodigoBanco&);
+    NumeroAgencia getNumeroAgencia() const;
+    void setNumeroAgencia(const NumeroAgencia&);
+    NumeroConta getNumeroConta() const;
+    void setNumeroConta(const NumeroConta&);
+};
+
 
 
 #endif // ENTIDADE_H
