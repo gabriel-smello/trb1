@@ -76,7 +76,7 @@ Bagagem Reserva::getBagagem() const {
         return bagagem;
 }
 
-//Decleracao da Entidade Carona
+//Metodos Classe Carona
 Carona::Carona(CodigoCarona codigo, Cidade cidadeOrigem, Estado estadoOrigem, Cidade cidadeDestino, Estado estadoDestino, Data data, Duracao duracao, Vagas vagas, Preco preco):
                 codigo(codigo), cidadeOrigem(cidadeOrigem), estadoOrigem(estadoOrigem), cidadeDestino(cidadeDestino), estadoDestino(estadoDestino), data(data), duracao(duracao), vagas(vagas), preco(preco){
 
