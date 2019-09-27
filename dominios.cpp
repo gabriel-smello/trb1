@@ -7,12 +7,8 @@ using namespace std;
 
 //Implementacao para a classe Assento
 void Assento::setAssento(char codigo){
+    validar(codigo);
     this->codigo = codigo;
-}
-
-Assento::Assento(char codigo){
-        validar(codigo);
-        setAssento(codigo);
 }
 
 char Assento::getAssento(){
@@ -28,12 +24,8 @@ void Assento::validar(char CodigoBanco) throw(invalid_argument){
 
 //Implementaçao para a classe Bagagem
 void Bagagem::setBagagem(int codigo){
-    this->codigo = codigo;
-}
-
-Bagagem::Bagagem(int codigo){
     validar(codigo);
-    setBagagem(codigo);
+    this->codigo = codigo;
 }
 
 int Bagagem::getBagagem(){
@@ -42,7 +34,7 @@ int Bagagem::getBagagem(){
 
 void Bagagem::validar(int codigo) throw(invalid_argument){
     if(!isdigit(codigo)){
-        throw invalid_argument("Apenas numeros sao necessarios em Bagagens.")
+        throw invalid_argument("Apenas numeros sao necessarios em Bagagens.");
     }
     if(codigo < 0 || codigo > maxBagagem){
         throw invalid_argument("Numero de bagagens nao permitido.");
@@ -51,12 +43,8 @@ void Bagagem::validar(int codigo) throw(invalid_argument){
 
 //Implementacao para a classe codigoBanco
 void CodigoBanco::setCodigoBanco(string codigo){
-    this->codigo = codigo;
-}
-
-CodigoBanco::CodigoBanco(string codigo){
     validar(codigo);
-    setCodigoBanco(codigo);
+    this->codigo = codigo;
 }
 
 string CodigoBanco::getCodigoBanco(){
@@ -78,12 +66,8 @@ void CodigoBanco::validar(string codigo) throw(invalid_argument){
 
 //Implementaçao para a classe codigoCarona
 void CodigoCarona::setCodigoCarona(string codigo){
-    this->codigo = codigo;
-}
-
-CodigoCarona::CodigoCarona(string codigo){
     validar(codigo);
-    setCodigoCarona(codigo);
+    this->codigo = codigo;
 }
 
 string CodigoCarona::getCodigoCarona(){
@@ -105,12 +89,8 @@ void CodigoCarona::validar(string codigo) throw(invalid_argument){
 
 //Implementação para a classe codigoReserva
 void CodigoReserva::setCodigoReserva(string codigo){
-    this->codigo = codigo;
-}
-
-CodigoReserva::CodigoReserva(string codigo){
     validar(codigo);
-    setCodigoReserva(codigo);
+    this->codigo = codigo;
 }
 
 string CodigoReserva::getCodigoReserva(){
@@ -132,12 +112,8 @@ void CodigoReserva::validar(string codigo) throw(invalid_argument){
 
 //Implementaçao para a classe Cidade
 void Cidade::setCidade(string codigo){
-    this->codigo = codigo;
-}
-
-Cidade::Cidade(string codigo){
     validar(codigo);
-    setCidade(codigo);
+    this->codigo = codigo;
 }
 
 string Cidade::getCidade(){
@@ -169,12 +145,8 @@ void Cidade::validar(string codigo) throw(invalid_argument){
 
 //Implementaçao para a classe Cpf
 void Cpf::setCpf(string codigo){
-    this->codigo = codigo;
-}
-
-Cpf::Cpf(string codigo){
     validar(codigo);
-    setCpf(codigo);
+    this->codigo = codigo;
 }
 
 string Cpf::getCpf(){
@@ -224,10 +196,6 @@ void Cpf::validar(string codigo) throw(invalid_argument){
 void Data::setData(string codigo){
     validar(codigo);
     this->codigo = codigo;
-}
-
-Data::Data(string codigo){
-    setData(codigo);
 }
 
 string Data::getData(){
@@ -283,12 +251,8 @@ void Data::validar(string codigo) throw(invalid_argument){
 
 //implementaçao para a classe Duracao
 void Duracao::setDuracao(int codigo){
-    this->codigo = codigo;
-}
-
-Duracao::Duracao(int codigo){
     validar(codigo);
-    setDuracao(codigo);
+    this->codigo = codigo;
 }
 
 int Duracao::getDuracao(){
@@ -310,10 +274,6 @@ void Estado::setEstado(string codigo){
     codigo[0] = toupper(codigo[0]);
     codigo[1] = toupper(codigo[1]);
     this->codigo = codigo;
-}
-
-Estado::Estado(string codigo){
-    setEstado(codigo);
 }
 
 string Estado::getEstado(){
@@ -394,6 +354,7 @@ void Email::validar(string codigo) throw(invalid_argument){
     }
 }
 
+
 //Implementacao para a classe Nome
     void Nome::setNome(string codigo){
         validar(codigo);
@@ -410,7 +371,7 @@ void Email::validar(string codigo) throw(invalid_argument){
             throw invalid_argument("Tamanho de argumento invalido.");
         }
         for(i=0 ; i<codigo.length() ; i++){
-            if(!(codigo[i] == 32 || codigo[i] == 46 || isalpha(codigo[i]) ) ){
+            if(!(codigo[i] == 32 || codigo[i] == 46 || (codigo[i]>=65 && codigo[i]<=90) || (codigo[i]>=97 && codigo[i]<=122))){
                 throw invalid_argument("Caracter invalido.");
             }
             if(codigo[i] == ' ' && codigo[i+1] == ' '){
