@@ -4,6 +4,48 @@
 
 using namespace std;
 
+class TUNome {
+private:
+    const string VALOR_VALIDO   = "Igor Laranja.";
+    const string VALOR_INVALIDO = "J0rge  Silv4";
+
+    Nome *codigo;         // Referência para o objeto a ser testado.
+
+    int estado;             // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run();
+};
+
+class TUNumeroAgencia {
+private:
+    const int VALOR_VALIDO   = 37622;
+    const int VALOR_INVALIDO = 98324;
+
+    NumeroAgencia *codigo;         // Referência para o objeto a ser testado.
+
+    int estado;             // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run();
+};
+
 class TUNumeroConta {
 private:
     const int VALOR_VALIDO   = 1111111;
