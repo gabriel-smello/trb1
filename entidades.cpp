@@ -76,6 +76,84 @@ Bagagem Reserva::getBagagem() const {
         return bagagem;
 }
 
+//Decleracao da Entidade Carona
+Carona::Carona(CodigoCarona codigo, Cidade cidadeOrigem, Estado estadoOrigem, Cidade cidadeDestino, Estado estadoDestino, Data data, Duracao duracao, Vagas vagas, Preco preco):
+                codigo(codigo), cidadeOrigem(cidadeOrigem), estadoOrigem(estadoOrigem), cidadeDestino(cidadeDestino), estadoDestino(estadoDestino), data(data), duracao(duracao), vagas(vagas), preco(preco){
+
+}
+
+void Carona::setCodigoCarona(const CodigoCarona& codigo) {
+        this->codigo = codigo;
+}
+
+CodigoCarona Carona::getCodigoCarona() const{
+    return codigo;
+}
+
+void Carona::setCidadeOrigem(const Cidade& cidadeOrigem) {
+        this->cidadeOrigem = cidadeOrigem;
+}
+
+Cidade Carona::getCidadeOrigem() const{
+    return cidadeOrigem;
+}
+
+void Carona::setCidadeDestino(const Cidade& cidadeDestino) {
+        this->cidadeDestino = cidadeDestino;
+}
+
+Cidade Carona::getCidadeDestino() const{
+    return cidadeDestino;
+}
+
+void Carona::setEstadoOrigem(const Estado& estadoOrigem) {
+        this->estadoOrigem = estadoOrigem;
+}
+
+Estado Carona::getEstadoOrigem() const{
+    return estadoOrigem;
+}
+
+void Carona::setEstadoDestino(const Estado& estadoDestino) {
+        this->estadoDestino = estadoDestino;
+}
+
+Estado Carona::getEstadoDestino() const{
+    return estadoDestino;
+}
+
+void Carona::setData(const Data& data){
+    this->data = data;
+}
+
+Data Carona::getData() const{
+    return data;
+}
+
+void Carona::setDuracao(const Duracao& duracao){
+    this->duracao = duracao;
+}
+
+Duracao Carona::getDuracao() const{
+    return duracao;
+}
+
+void Carona::setVagas(const Vagas& vagas){
+    this->vagas = vagas;
+}
+
+Vagas Carona::getVagas() const{
+    return vagas;
+}
+
+void Carona::setPreco(const Preco& preco){
+    this->preco = preco;
+}
+
+Preco Carona::getPreco() const{
+    return preco;
+}
+
 //Metodos Classe Conta
 Conta::Conta(CodigoBanco banco, NumeroAgencia agencia, NumeroConta numero):
                 banco(banco), agencia(agencia), numero(numero){
