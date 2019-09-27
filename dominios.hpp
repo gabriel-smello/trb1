@@ -9,10 +9,9 @@ class Assento {
 private:
     char codigo;
     void validar(char codigo) throw(invalid_argument);
-    void setAssento(char codigo);
 public:
+    void setAssento(char codigo);
     char getAssento();
-    Assento(char codigo);
 };
 
 class Bagagem {
@@ -20,61 +19,54 @@ private:
     int codigo;
     const static int maxBagagem = 4;
     void validar(int codigo) throw(invalid_argument);
-    void setBagagem(int codigo);
 public:
+    void setBagagem(int codigo);
     int getBagagem();
-    Bagagem(int Ccdigo);
 };
 
 class CodigoBanco{
 private:
     string codigo;
     void validar(string codigo) throw(invalid_argument);
-    void setCodigoBanco(string codigo);
 public:
+    void setCodigoBanco(string codigo);
     string getCodigoBanco();
-    CodigoBanco(string codigo);
-
 };
 
 class CodigoCarona{
 private:
     string codigo;
     void validar(string codigo) throw(invalid_argument);
-    void setCodigoCarona(string codigo);
 public:
+    void setCodigoCarona(string codigo);
     string getCodigoCarona();
-    CodigoCarona(string codigo);
 };
 
 class CodigoReserva{
 private:
     string codigo;
     void validar(string codigo) throw(invalid_argument);
-    void setCodigoReserva(string codigo);
 public:
+    void setCodigoReserva(string codigo);
     string getCodigoReserva();
-    CodigoReserva(string codigo);
 };
 
 class Cidade{
 private:
     string codigo;
     void validar(string codigo) throw(invalid_argument);
-    void setCidade(string codigo);
 public:
+    void setCidade(string codigo);
     string getCidade();
-    Cidade(string codigo);
 };
 
-lass Cpf{
+class Cpf{
 private:
     string codigo;
     void validar(string codigo) throw(invalid_argument);
-    void setCpf(string codigo);
 public:
+    void setCpf(string codigo);
     string getCpf();
-    Cpf(string codigo);
 };
 
 class Data{
@@ -82,10 +74,9 @@ private:
     string codigo;
     const static int maxAno = 2099;
     void validar(string codigo) throw(invalid_argument);
-    void setData(string codigo);
 public:
+    void setData(string codigo);
     string getData();
-    Data(string codigo);
 };
 
 class Duracao{
@@ -94,20 +85,18 @@ private:
     const static int horaMin = 1;
     const static int horaMax = 48;
     void validar(int codigo) throw(invalid_argument);
-    void setDuracao(int codigo);
 public:
+    void setDuracao(int codigo);
     int getDuracao();
-    Duracao(int codigo);
 };
 
 class Estado{
 private:
     string codigo;
     void validar(string codigo) throw(invalid_argument);
-    void setEstado(string codigo);
 public:
+    void setEstado(string codigo);
     string getEstado();
-    Estado(string codigo);
 };
 
 class Email{
@@ -117,10 +106,9 @@ private:
     const static int numMaxDominio = 20;
 
     void validar(string codigo) throw(invalid_argument);
-    void setEmail(string codigo);
 public:
+    void setEmail(string codigo);
     string getEmail();
-    Email(string codigo);
 };
 
 class Nome{
@@ -128,10 +116,9 @@ private:
     string codigo;
     const static int maxNome = 20;
     void validar(string codigo) throw(invalid_argument);
-    void setNome(string codigo);
 public:
+    void setNome(string codigo);
     string getNome();
-    Nome(string codigo);
 };
 
 class NumeroAgencia{
