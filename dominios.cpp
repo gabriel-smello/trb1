@@ -342,10 +342,6 @@ void Email::setEmail(string codigo){
     this->codigo = codigo;
 }
 
-Email::Email(string codigo){
-    setEmail(codigo);
-}
-
 string Email::getEmail(){
     return codigo;
 }
@@ -398,15 +394,10 @@ void Email::validar(string codigo) throw(invalid_argument){
     }
 }
 
-
 //Implementacao para a classe Nome
     void Nome::setNome(string codigo){
         validar(codigo);
         this->codigo = codigo;
-    }
-
-    Nome::Nome(string codigo){
-        setNome(codigo);
     }
 
     string Nome::getNome(){
@@ -419,7 +410,7 @@ void Email::validar(string codigo) throw(invalid_argument){
             throw invalid_argument("Tamanho de argumento invalido.");
         }
         for(i=0 ; i<codigo.length() ; i++){
-            if(!(codigo[i] == 32 || codigo[i] == 46 || (codigo[i]>=65 && codigo[i]<=90) || (codigo[i]>=97 && codigo[i]<=122))){
+            if(!(codigo[i] == 32 || codigo[i] == 46 || isalpha(codigo[i]) ) ){
                 throw invalid_argument("Caracter invalido.");
             }
             if(codigo[i] == ' ' && codigo[i+1] == ' '){
