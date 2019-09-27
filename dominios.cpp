@@ -15,9 +15,9 @@ char Assento::getAssento(){
     return codigo;
 }
 
-void Assento::validar(char CodigoBanco) throw(invalid_argument){
+void Assento::validar(char codigo) throw(invalid_argument){
     codigo = toupper(codigo);
-    if(codigo != 'D' || codigo != 'T'){
+    if(codigo != 'D' && codigo != 'T'){
         throw invalid_argument("Tipo de assento invalido.");
     }
 }
@@ -33,9 +33,6 @@ int Bagagem::getBagagem(){
 }
 
 void Bagagem::validar(int codigo) throw(invalid_argument){
-    if(!isdigit(codigo)){
-        throw invalid_argument("Apenas numeros sao necessarios em Bagagens.");
-    }
     if(codigo < 0 || codigo > maxBagagem){
         throw invalid_argument("Numero de bagagens nao permitido.");
     }
@@ -121,20 +118,20 @@ string Cidade::getCidade(){
 }
 
 void Cidade::validar(string codigo) throw(invalid_argument){
-    int i =0, contaLetra = 0;
+    int i = 0, contaLetra = 0;
     if(codigo.length() < 1 || codigo.length() > 10){
-        throw invalid_argument("Cidade informada nao existente.");
+        throw invalid_argument("Quantidade de caracteres invalida.");
  }
     while(i < codigo.length()){
         if(isalpha(codigo[i])){
             contaLetra++;
         }
-        if(!isalpha(codigo[i]) || codigo[i] != '.' || codigo[i] != ' '){
+        if(!(isalpha(codigo[i]) || codigo[i] == '.' || codigo[i] == ' ')){
             throw invalid_argument("Uso de caractere nao permitido em Cidade.");
         }else if(codigo [i] == '.' && !isalpha(codigo[i-1])){
-                throw invalid_argument("Sequencia de digitos de cidade nao permitida.");
+            throw invalid_argument("Sequencia de digitos de cidade nao permitida.");
         }else if(codigo[i] == ' ' && codigo[i+1] == ' '){
-                throw invalid_argument("Sequencia de digitos de cidade nao permitida.");
+            throw invalid_argument("Sequencia de digitos de cidade nao permitida.");
         }
         i++;
     }
@@ -187,7 +184,7 @@ void Cpf::validar(string codigo) throw(invalid_argument){
     if(digito2 == 10){
         digito2 = 0;
     }
-    if(digito1 != codigo[9] || digito2 != codigo[10]){
+    if(digito1 != (codigo[9]-48)|| digito2 != (codigo[10]-48) ){
         throw invalid_argument("CPF invalido.");
     }
 }
@@ -205,7 +202,6 @@ string Data::getData(){
 void Data::validar(string codigo) throw(invalid_argument){
     string dia = "00", mes = "00", ano = "0000";
     int numDia, numMes, numAno;
-    int i;
     if(codigo.length() != 10){
         throw invalid_argument("Tamanho de data invalido.");
     }
@@ -260,9 +256,6 @@ int Duracao::getDuracao(){
 }
 
 void Duracao::validar(int codigo) throw(invalid_argument){
-    if(!isdigit(codigo)){
-        throw invalid_argument("Para hora(s) é necessario apenas numeros.");
-    }
     if(codigo < horaMin || codigo > horaMax){
         throw invalid_argument("Hora nao permitida.");
     }
@@ -271,8 +264,6 @@ void Duracao::validar(int codigo) throw(invalid_argument){
 //Implementaçao para a classe Estado
 void Estado::setEstado(string codigo){
     validar(codigo);
-    codigo[0] = toupper(codigo[0]);
-    codigo[1] = toupper(codigo[1]);
     this->codigo = codigo;
 }
 
@@ -371,7 +362,7 @@ void Email::validar(string codigo) throw(invalid_argument){
             throw invalid_argument("Tamanho de argumento invalido.");
         }
         for(i=0 ; i<codigo.length() ; i++){
-            if(!(codigo[i] == 32 || codigo[i] == 46 || (codigo[i]>=65 && codigo[i]<=90) || (codigo[i]>=97 && codigo[i]<=122))){
+            if(!(codigo[i] == 32 || codigo[i] == 46 || isalpha(codigo[i]) ) ){
                 throw invalid_argument("Caracter invalido.");
             }
             if(codigo[i] == ' ' && codigo[i+1] == ' '){
@@ -467,7 +458,7 @@ void Email::validar(string codigo) throw(invalid_argument){
                 throw invalid_argument("Digito verificador nao corresponde");
             }
         }
-    }    
+    }
 
 // Metodos classe dominio Preço
     float Preco::getPreco(){
