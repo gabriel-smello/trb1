@@ -1,5 +1,91 @@
 #include "teste_dominio.hpp"
 
+// Definições de métodos da classe TUNome
+void TUNome::setUp(){
+    codigo = new Nome();
+    estado = SUCESSO;
+}
+
+void TUNome::tearDown(){
+    delete codigo;
+}
+
+void TUNome::testarCenarioSucesso(){
+    try{
+        codigo->setNome(VALOR_VALIDO);
+        if (codigo->getNome() != VALOR_VALIDO){
+            cout << "Falha no valor valido de Nome no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de Nome no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUNome::testarCenarioFalha(){
+    try{
+        codigo->setNome(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de Nome" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUNome::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+// Definições de métodos da classe TUNumeroAgencia
+void TUNumeroAgencia::setUp(){
+    codigo = new NumeroAgencia();
+    estado = SUCESSO;
+}
+
+void TUNumeroAgencia::tearDown(){
+    delete codigo;
+}
+
+void TUNumeroAgencia::testarCenarioSucesso(){
+    try{
+        codigo->setNumeroAgencia(VALOR_VALIDO);
+        if (codigo->getNumeroAgencia() != VALOR_VALIDO){
+            cout << "Falha no valor valido de NumeroAgencia no get" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument){
+        cout << "Falha no valor valido de NumeroAgencia no set" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUNumeroAgencia::testarCenarioFalha(){
+    try{
+        codigo->setNumeroAgencia(VALOR_INVALIDO);
+        cout << "Falha no valor invalido de NumeroAgencia" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument){
+        return;
+    }
+}
+
+int TUNumeroAgencia::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
 // Definições de métodos da classe TUNumeroConta
 void TUNumeroConta::setUp(){
     codigo = new NumeroConta();
