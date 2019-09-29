@@ -3,15 +3,15 @@
 #include "dominios.hpp"
 
 using namespace std;
-
+///Teste de Unidade para as funcoes publicas da Classe Assento
 class TUAssento {
 private:
     const char valorValido   = 'D';
     const char valorInvalido = 'b';
 
-    Assento *codigo;         
+    Assento *codigo;
 
-    int estado;             
+    int estado;
 
     void setUp();
     void tearDown();
@@ -24,15 +24,15 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe Bagagem
 class TUBagagem {
 private:
     const int valorValido   = 3;
     const int valorInvalido = 7;
 
-    Bagagem *codigo;         
+    Bagagem *codigo;
 
-    int estado;             
+    int estado;
 
     void setUp();
     void tearDown();
@@ -45,7 +45,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe CodigoBanco
 class TUCodigoBanco {
 private:
     const string valorValido   = "876";
@@ -66,7 +66,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe CodigoCarona
 class TUCodigoCarona {
 private:
     const string valorValido   = "8762";
@@ -87,7 +87,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe CodigoReserva
 class TUCodigoReserva {
 private:
     const string valorValido   = "00000";
@@ -108,7 +108,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe Cidade
 class TUCidade {
 private:
     const string valorValido   = "Brasilia.";
@@ -129,7 +129,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe Cpf
 class TUCpf {
 private:
     const string valorValido   = "03399105185";
@@ -150,7 +150,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe Data
 class TUData {
 private:
     const string valorValido   = "01/10/2019";
@@ -171,7 +171,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe Duracao
 class TUDuracao {
 private:
     const int valorValido   = 12;
@@ -192,7 +192,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe Estado
 class TUEstado {
 private:
     const string valorValido   = "ba";
@@ -213,15 +213,15 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe Email
 class TUEmail {
 private:
     const string valorValido   = "Julinho.2012@hotmail.com";
     const string valorInvalido = "Case#ior.@gmail.com";
 
-    Email *codigo;         
+    Email *codigo;
 
-    int estado;             
+    int estado;
 
     void setUp();
     void tearDown();
@@ -234,15 +234,15 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe Nome
 class TUNome {
 private:
     const string valorValido   = "Igor Laranja.";
     const string valorInvalido = "J0rge  Silv4";
 
-    Nome *codigo;         
+    Nome *codigo;
 
-    int estado;             
+    int estado;
 
     void setUp();
     void tearDown();
@@ -255,15 +255,15 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe NumeroAgencia
 class TUNumeroAgencia {
 private:
     const int valorValido   = 37622;
     const int valorInvalido = 98324;
 
-    NumeroAgencia *codigo;         
+    NumeroAgencia *codigo;
 
-    int estado;             
+    int estado;
 
     void setUp();
     void tearDown();
@@ -276,7 +276,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe NumeroConta
 class TUNumeroConta {
 private:
     const int valorValido   = 1111111;
@@ -297,7 +297,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe Preco
 class TUPreco {
 private:
     const int valorValido   = 1677;
@@ -318,7 +318,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe Telefone
 class TUTelefone {
 private:
     const string valorValido   = "5511986756327";
@@ -339,7 +339,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe Senha
 class TUSenha {
 private:
     const string valorValido   = "$Enh4";
@@ -360,7 +360,7 @@ public:
 
     int run();
 };
-
+///Teste de Unidade para as funcoes publicas da Classe Vagas
 class TUVagas {
 private:
     const static int valorValido   = 0;
