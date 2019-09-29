@@ -4,7 +4,7 @@
 #include "entidades.hpp"
 
 using namespace std;
-
+///Teste de Unidade para as funcoes publicas da Entidade Usuario
 class TUUsuario{
 private:
     Nome testeNome;
@@ -26,7 +26,7 @@ public:
     const static int sucesso =  0;
     const static int falha   = -1;
 };
-
+///Teste de Unidade para as funcoes publicas da Entidade Reserva
 class TUReserva{
 private:
     CodigoReserva testeCodigoReserva;
@@ -46,7 +46,7 @@ public:
     const static int sucesso =  0;
     const static int falha   = -1;
 };
-
+///Teste de Unidade para as funcoes publicas da Entidade Carona
 class TUCarona{
 private:
     CodigoCarona testeCodigoCarona;
@@ -70,7 +70,7 @@ public:
     const static int sucesso =  0;
     const static int falha   = -1;
 };
-
+///Teste de Unidade para as funcoes publicas da Entidade Conta
 class TUConta{
 private:
     CodigoBanco testeBanco;
