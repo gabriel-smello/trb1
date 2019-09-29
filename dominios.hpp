@@ -4,7 +4,7 @@
 #include <string>
 #include <cctype>
 using namespace std;
-
+///Classe usada para guardar o tipo de assento solicitado.
 class Assento {
 private:
     char codigo;
@@ -13,7 +13,7 @@ public:
     void setAssento(char codigo);
     char getAssento();
 };
-
+///Classe usada para guardar o numero de bagagens solicitada.
 class Bagagem {
 private:
     int codigo;
@@ -25,7 +25,7 @@ public:
 
     void setBagagem(int codigo);
 };
-
+///Classe usada para guardar o numero da conta informada.
 class CodigoBanco{
 private:
     string codigo;
@@ -36,7 +36,7 @@ public:
 
     void setCodigoBanco(string codigo);
 };
-
+///Classe usada para guardar o codigo da carona informada.
 class CodigoCarona{
 private:
     string codigo;
@@ -47,7 +47,7 @@ public:
 
     void setCodigoCarona(string codigo);
 };
-
+///Classe usada para guardar o codigo da reserva da carona.
 class CodigoReserva{
 private:
     string codigo;
@@ -58,7 +58,7 @@ public:
 
     void setCodigoReserva(string codigo);
 };
-
+///classe usada para guardar informacao de cidade (origem/destino).
 class Cidade{
 private:
     string codigo;
@@ -67,7 +67,7 @@ public:
     string getCidade();
     void setCidade(string codigo);
 };
-
+///Classe usada para guardar o CPF do usuario
 class Cpf{
 private:
     string codigo;
@@ -76,7 +76,7 @@ public:
     string getCpf();
     void setCpf(string codigo);
 };
-
+///Classe usada para guardar a data da carona.
 class Data{
 private:
     string codigo;
@@ -86,7 +86,7 @@ public:
     string getData();
     void setData(string codigo);
 };
-
+///Classe usada para guardar a Duracao da carona informada.
 class Duracao{
 private:
     int codigo;
@@ -97,7 +97,7 @@ public:
     int getDuracao();
     void setDuracao(int codigo);
 };
-
+///Classe usada para guardar informacao de estado (origem/destino).
 class Estado{
 private:
     string codigo;
@@ -106,7 +106,7 @@ public:
     string getEstado();
     void setEstado(string codigo);
 };
-
+///Classe usada para guardar o EMAIL do usuario.
 class Email{
 private:
     string codigo;
@@ -119,7 +119,7 @@ public:
 
     void setEmail(string codigo);
 };
-
+///Classe usada para guardar o nome do usuario.
 class Nome{
 private:
     string codigo;
@@ -129,7 +129,7 @@ public:
     void setNome(string codigo);
     string getNome();
 };
-
+///Classe usada para guardar o numero de agencia informada.
 class NumeroAgencia{
 private:
     int numeroAgencia;
@@ -138,7 +138,7 @@ public:
     void setNumeroAgencia(int numeroAgencia);
     int getNumeroAgencia();
 };
-
+///Classe usada para guardar o numero de conta informada.
 class NumeroConta{
 private:
     int numeroConta;
@@ -147,7 +147,7 @@ public:
     void setNumeroConta(int numeroConta);
     int getNumeroConta();
 };
-
+///Classe usada para guardar o preco da carona.
 class Preco{
 private:
     const static float minPreco = 1.00;
@@ -158,7 +158,7 @@ public:
     void setPreco(float preco);
     float getPreco();
 };
-
+///Classe usada para guardar o numero de telefone informado.
 class Telefone{
 private:
     string numTelefone;
@@ -167,7 +167,7 @@ public:
     void setTelefone(string numTelefone);
     string getTelefone();
 };
-
+///Classe usada para guardar a senha do usuario.
 class Senha{
 private:
     static const int tamanhoSenha = 5;
@@ -177,7 +177,7 @@ public:
     void setSenha(string senha);
     string getSenha();
 };
-
+///Classe usada para guardar a informacao de numero de vagas usadas/disponiveis.
 class Vagas{
 private:
     const static int maxVagas = 4;
