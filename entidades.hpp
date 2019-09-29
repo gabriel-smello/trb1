@@ -23,7 +23,7 @@ public:
     Usuario(){};
     ///Construtor com os objetos Nome, Telefone, Email, Senha e Cpf definidos
     Usuario(Nome, Telefone, Email, Senha, Cpf);
-    
+
     ///Metodo que retorna o objeto Nome
     Nome getNome() const;
     ///Metodo que define o objeto Nome
@@ -40,7 +40,7 @@ public:
     Senha getSenha() const;
     ///Metodo que define o objeto Senha
     void setSenha(const Senha&);
-    ///Metodo que retorna o objeto Cpf 
+    ///Metodo que retorna o objeto Cpf
     Cpf getCpf() const;
     ///Metodo que define o objeto Cpf
     void setCpf(const Cpf&);
@@ -59,7 +59,7 @@ public:
         Reserva(){}
         ///Construtor com os objetos CodigoReserva, Assento, Bagagem definidos
         Reserva(CodigoReserva, Assento, Bagagem);
-        
+
         ///Metodo que retorna o objeto CodigoReserva
         CodigoReserva getCodigoReserva() const;
         ///Metodo que define o objeto CodigoReserva
@@ -151,41 +151,6 @@ public:
     ///Metodo que retorna o objeto de NumeroConta
     NumeroConta getNumeroConta() const;
     ///Metodo que define o objeto de NumeroConta
-    void setNumeroConta(const NumeroConta&);
-};
-
-
-
-#endif // ENTIDADE_H
-
-        Data getData() const;
-        void setData(const Data&);
-        Duracao getDuracao() const;
-        void setDuracao(const Duracao&);
-        Vagas getVagas() const;
-        void setVagas(const Vagas&);
-        Preco getPreco() const;
-        void setPreco(const Preco&);
-};
-/**
-* Classe entidade que usa os atributos:
-* CodigoBanco, NumeroAgencia e NumeroConta
-*/
-///Classe de entidade composta por outras classes, salva para Conta.
-class Conta {
-private:
-    CodigoBanco banco;
-    NumeroAgencia agencia;
-    NumeroConta numero;
-public:
-    Conta(){}
-    Conta(CodigoBanco, NumeroAgencia, NumeroConta);
-
-    CodigoBanco getCodigoBanco() const;
-    void setCodigoBanco(const CodigoBanco&);
-    NumeroAgencia getNumeroAgencia() const;
-    void setNumeroAgencia(const NumeroAgencia&);
-    NumeroConta getNumeroConta() const;
     void setNumeroConta(const NumeroConta&);
 };
 
