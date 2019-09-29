@@ -7,7 +7,11 @@
 using namespace std;
 
 //Declaracao das classes entidade
-
+/**
+* Classe entidade que usa os atributos:
+* Nome, Telefone, Email, Senha e CPF
+*/
+///Classe de entidade composta por outras classes, salva para Usuario.
 class Usuario{
 private:
     Nome nome;
@@ -30,7 +34,11 @@ public:
     Cpf getCpf() const;
     void setCpf(const Cpf&);
 };
-
+/**
+* Classe entidade que usa os atributos:
+* CodigoReserva, Assento e Bagagem
+*/
+///Classe de entidade composta por outras classes, salva para Reserva.
 class Reserva {
 private:
         CodigoReserva codigo;
@@ -47,7 +55,11 @@ public:
         Bagagem getBagagem() const;
         void setBagagem(const Bagagem&);
 };
-
+/**
+* Classe entidade que usa os atributos:
+* CodigoCarona, Cidade, Estado, Data, Duracao, Vagas e Preco
+*/
+///Classe de entidade composta por outras classes, salva para Carona.
 class Carona{
 private:
         CodigoCarona codigo;
@@ -79,7 +91,11 @@ public:
         Preco getPreco() const;
         void setPreco(const Preco&);
 };
-
+/**
+* Classe entidade que usa os atributos:
+* CodigoBanco, NumeroAgencia e NumeroConta
+*/
+///Classe de entidade composta por outras classes, salva para Conta.
 class Conta {
 private:
     CodigoBanco banco;
