@@ -1,6 +1,8 @@
 #include <iostream>
-#include "dominios.hpp"
+//#include "dominios.hpp"
 #include "teste_dominio.hpp"
+//#include "entidades.hpp"
+#include "teste_entidade.hpp"
 
 using namespace std;
 
@@ -9,44 +11,59 @@ int main()
     cout << "Testando..." << endl;
     cout << "0 = SUCESSO   ;   -1 = FALHA \n" << endl;
 
-    TUAssento       TesteAssento;
-    TUBagagem       TesteBagagem;
-    TUCodigoBanco   TesteCodigoBanco;
-    TUCodigoCarona  TesteCodigoCarona;
-    TUCodigoReserva TesteCodigoReserva;
-    TUCidade        TesteCidade;
-    TUCpf           TesteCpf;
-    TUData          TesteData;
-    TUDuracao       TesteDuracao;
-    TUEstado        TesteEstado;
-    TUEmail         TesteEmail;
-    TUNome          TesteNome;
-    TUNumeroAgencia TesteNumeroAgencia;
-    TUNumeroConta   TesteNumeroConta;
-    TUPreco         TestePreco;
-    TUTelefone      TesteTelefone;
-    TUSenha         TesteSenha;
-    TUVagas         TesteVaga;
+    //Objetos de teste de dominio
+    TUAssento       testeAssento;
+    TUBagagem       testeBagagem;
+    TUCodigoBanco   testeCodigoBanco;
+    TUCodigoCarona  testeCodigoCarona;
+    TUCodigoReserva testeCodigoReserva;
+    TUCidade        testeCidade;
+    TUCpf           testeCpf;
+    TUData          testeData;
+    TUDuracao       testeDuracao;
+    TUEstado        testeEstado;
+    TUEmail         testeEmail;
+    TUNome          testeNome;
+    TUNumeroAgencia testeNumeroAgencia;
+    TUNumeroConta   testeNumeroConta;
+    TUPreco         testePreco;
+    TUTelefone      testeTelefone;
+    TUSenha         testeSenha;
+    TUVagas         testeVaga;
 
-    cout << "Assento: " << TesteAssento.run() << "\n";
-    cout << "Bagagem: " << TesteBagagem.run() << "\n";
-    cout << "CodigoBanco: " << TesteCodigoBanco.run() << "\n";
-    cout << "CodigoCarona: " << TesteCodigoCarona.run() << "\n";
-    cout << "CodigoReserva: " << TesteCodigoReserva.run() << "\n";
-    cout << "Cidade: " << TesteCidade.run() << "\n";
-    cout << "Cpf: " << TesteCpf.run() << "\n";
-    cout << "Data: " << TesteData.run() << "\n";
-    cout << "Duracao: " << TesteDuracao.run() << "\n";
-    cout << "Estado: " << TesteEstado.run() << "\n";
-    cout << "Email: " << TesteEmail.run() << "\n";
-    cout << "Nome: " << TesteNome.run() << "\n";
-    cout << "NumeroAgencia: " << TesteNumeroAgencia.run() << "\n";
-    cout << "NumeroConta: " << TesteNumeroConta.run() << "\n";
-    cout << "Preco: " << TestePreco.run() << "\n";
-    cout << "Telefone: " << TesteTelefone.run() << "\n";
-    cout << "Senha: " << TesteSenha.run() << "\n";
-    cout << "Vaga: " << TesteVaga.run() << "\n";
+    cout << "-Dominios" << endl;
+    cout << "Assento: " << testeAssento.run() << "\n";
+    cout << "Bagagem: " << testeBagagem.run() << "\n";
+    cout << "CodigoBanco: " << testeCodigoBanco.run() << "\n";
+    cout << "CodigoCarona: " << testeCodigoCarona.run() << "\n";
+    cout << "CodigoReserva: " << testeCodigoReserva.run() << "\n";
+    cout << "Cidade: " << testeCidade.run() << "\n";
+    cout << "Cpf: " << testeCpf.run() << "\n";
+    cout << "Data: " << testeData.run() << "\n";
+    cout << "Duracao: " << testeDuracao.run() << "\n";
+    cout << "Estado: " << testeEstado.run() << "\n";
+    cout << "Email: " << testeEmail.run() << "\n";
+    cout << "Nome: " << testeNome.run() << "\n";
+    cout << "NumeroAgencia: " << testeNumeroAgencia.run() << "\n";
+    cout << "NumeroConta: " << testeNumeroConta.run() << "\n";
+    cout << "Preco: " << testePreco.run() << "\n";
+    cout << "Telefone: " << testeTelefone.run() << "\n";
+    cout << "Senha: " << testeSenha.run() << "\n";
+    cout << "Vaga: " << testeVaga.run() << "\n\n";
+
+    //Objetos de teste de entidade
+    TUUsuario testeUsuario;
+    TUReserva testeReserva;
+    TUCarona testeCarona;
+    TUConta testeConta;
+
+    cout << "-Entidades" << endl;
+    cout << "Usuario: " << testeUsuario.run() << endl;
+    cout << "Reserva: " << testeReserva.run() << endl;
+    cout << "Carona: " << testeCarona.run() << endl;
+    cout << "Conta: " << testeConta.run() << "\n\n";
 
     cout << "Fim do teste." << endl;
     return 0;
 }
+
