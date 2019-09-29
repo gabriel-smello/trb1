@@ -120,10 +120,12 @@ public:
 class Estado{
 private:
     string codigo;
-    ///Metodo de validacao seguindo as especificacoes da variavel
+    ///metodo de validacao do codigo segundo as especificacoes da classe
     void validar(string codigo) throw(invalid_argument);
 public:
+    ///metodo que retorna a variavel codigo da classe Estado
     string getEstado();
+    ///metodo que permite a insercao ou alteracoes da variavel codigo da classe Estado
     void setEstado(string codigo);
 };
 ///Classe usada para guardar o EMAIL do usuario.
@@ -132,11 +134,12 @@ private:
     string codigo;
     const static int numMaxLocal = 20;
     const static int numMaxDominio = 20;
-    ///Metodo de validacao seguindo as especificacoes da classe
+    ///metodo de validacao do codigo segundo as especificacoes da classe
     void validar(string codigo) throw(invalid_argument);
 public:
+    ///metodo que retorna a variavel codigo da classe Email
     string getEmail();
-
+    ///metodo que permite a insercao ou alteracoes da variavel codigo da classe Email
     void setEmail(string codigo);
 };
 ///Classe usada para guardar o nome do usuario.
@@ -144,30 +147,36 @@ class Nome{
 private:
     string codigo;
     const static int maxNome = 20;
-    ///Metodo de validacao seguindo as especificacoes da variavel
+    ///metodo de validacao do codigo segundo as especificacoes da classe
     void validar(string codigo) throw(invalid_argument);
 public:
+    ///metodo que permite a insercao ou alteracoes da variavel codigo da classe Nome
     void setNome(string codigo);
+    ///metodo que retorna a variavel codigo da classe Nome
     string getNome();
 };
 ///Classe usada para guardar o numero de agencia informada.
 class NumeroAgencia{
 private:
     int numeroAgencia;
-    ///Metodo de validacao seguindo as especificacoes da variavel
+    ///metodo de validacao do codigo segundo as especificacoes da classe
     void validar(int numeroAgencia) throw(invalid_argument);
 public:
+    ///metodo que permite a insercao ou alteracoes da variavel numeroAgencia da classe NumeroAgencia
     void setNumeroAgencia(int numeroAgencia);
+    ///metodo que retorna a variavel numAgencia da classe NumeroAgencia
     int getNumeroAgencia();
 };
 ///Classe usada para guardar o numero de conta informada.
 class NumeroConta{
 private:
     int numeroConta;
-    ///Metodo de validacao seguindo as especificacoes da variavel
+    ///metodo de validacao do codigo segundo as especificacoes da classe
     void validar(int numeroConta) throw(invalid_argument);
 public:
+    ///metodo que permite a insercao ou alteracoes da variavel numeroConta da classe NumeroConta
     void setNumeroConta(int numeroConta);
+    ///metodo que retorna a variavel numeroConta da classe NumeroConta
     int getNumeroConta();
 };
 ///Classe usada para guardar o preco da carona.
@@ -176,20 +185,24 @@ private:
     const static float minPreco = 1.00;
     const static float maxPreco = 5000.00;
     float preco;
-    ///Metodo de validacao seguindo as especificacoes da variavel
+    ///metodo de validacao do codigo segundo as especificacoes da classe
     void validar(float preco) throw(invalid_argument);
 public:
+    ///metodo que permite a insercao ou alteracoes da variavel preco da classe Preco
     void setPreco(float preco);
+    ///metodo que retorna a variavel preco da classe Preco
     float getPreco();
 };
 ///Classe usada para guardar o numero de telefone informado.
 class Telefone{
 private:
     string numTelefone;
-    ///Metodo de validacao seguindo as especificacoes da variavel
+    ///metodo de validacao do codigo segundo as especificacoes da classe
     void validar(string numTelefone) throw(invalid_argument);
 public:
+    ///metodo que permite a insercao ou alteracoes da variavel numTelefone da classe Telefone
     void setTelefone(string numTelefone);
+    ///metodo que retorna a variavel numTelefone da classe Telefone
     string getTelefone();
 };
 ///Classe usada para guardar a senha do usuario.
@@ -197,10 +210,12 @@ class Senha{
 private:
     static const int tamanhoSenha = 5;
     string senha;
-    ///Metodo de validacao seguindo as especificacoes da variavel
+    ///metodo de validacao do codigo segundo as especificacoes da classe
     void validar(string senha) throw(invalid_argument);
 public:
+    ///metodo que permite a insercao ou alteracoes da variavel senha da classe Senha
     void setSenha(string senha);
+    ///metodo que retorna a variavel senha da classe Senha
     string getSenha();
 };
 ///Classe usada para guardar a informacao de numero de vagas usadas/disponiveis.
@@ -208,11 +223,14 @@ class Vagas{
 private:
     const static int maxVagas = 4;
     int numVagas;
-    ///Metodo de validacao seguindo as especificacoes da variavel numVagas
+    ///metodo de validacao do codigo segundo as especificacoes da classe
     void validar(int numVagas) throw(invalid_argument);
 public:
+    ///metodo que permite a insercao ou alteracoes da variavel numVagas da classe Vagas
     void setVagas(int numVagas);
+    ///metodo que retorna a variavel numVagas da classe Vagas
     int getVagas();
 };
 
 #endif //DOMINIO_H
+
