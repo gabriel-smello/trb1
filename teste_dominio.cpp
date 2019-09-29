@@ -572,7 +572,7 @@ void TUNumeroConta::tearDown(){
 void TUNumeroConta::testarCenarioSucesso(){
     try{
         codigo->setNumeroConta(valorValido);
-        if (codigo->getNumeroConta() != valorInvalido){
+        if (codigo->getNumeroConta() != valorValido){
             cout << "Falha no valor valido de NumeroConta no get" << endl;
             estado = falha;
         }
