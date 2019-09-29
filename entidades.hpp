@@ -21,17 +21,28 @@ private:
     Cpf cpf;
 public:
     Usuario(){};
+    ///Construtor com os objetos Nome, Telefone, Email, Senha e Cpf definidos
     Usuario(Nome, Telefone, Email, Senha, Cpf);
-
+    
+    ///Metodo que retorna o objeto Nome
     Nome getNome() const;
+    ///Metodo que define o objeto Nome
     void setNome(const Nome&);
+    ///Metodo que retorna o objeto Telefone
     Telefone getTelefone() const;
+    ///Metodo que define o objeto Telefone
     void setTelefone(const Telefone&);
+    ///Metodo que retorna o objeto Email
     Email getEmail() const;
+    ///Metodo que define o objeto Email
     void setEmail(const Email&);
+    ///Metodo que retorna o objeto Senha
     Senha getSenha() const;
+    ///Metodo que define o objeto Senha
     void setSenha(const Senha&);
+    ///Metodo que retorna o objeto Cpf 
     Cpf getCpf() const;
+    ///Metodo que define o objeto Cpf
     void setCpf(const Cpf&);
 };
 /**
@@ -46,13 +57,20 @@ private:
         Bagagem bagagem;
 public:
         Reserva(){}
+        ///Construtor com os objetos CodigoReserva, Assento, Bagagem definidos
         Reserva(CodigoReserva, Assento, Bagagem);
-
+        
+        ///Metodo que retorna o objeto CodigoReserva
         CodigoReserva getCodigoReserva() const;
+        ///Metodo que define o objeto CodigoReserva
         void setCodigoReserva(const CodigoReserva&);
+        ///Metodo que retorna o objeto Assento
         Assento getAssento() const;
+        ///Metodo que define o objeto Assento
         void setAssento(const Assento&);
+        ///Metodo que retorna o objeto Bagagem
         Bagagem getBagagem() const;
+        ///Metodo que define o objeto Bagagem
         void setBagagem(const Bagagem&);
 };
 /**
@@ -72,15 +90,25 @@ private:
 public:
         Carona(){}
         Carona(CodigoCarona, Cidade, Estado, Cidade, Estado, Data, Duracao, Vagas, Preco);
+        ///Metodo que retorna o objeto CodigoCarona
         CodigoCarona getCodigoCarona() const;
+        ///Metodo que define o objeto CodigoCarona
         void setCodigoCarona(const CodigoCarona&);
+        ///Metodo que retorna o objeto CidadeOrigem
         Cidade getCidadeOrigem() const;
+        ///Metodo que define o objeto CidadeOrigem
         void setCidadeOrigem(const Cidade&);
+        ///Metodo que retorna o objeto EstadoOrigem
         Estado getEstadoOrigem() const;
+        ///Metodo que define o objeto EstadoOrigem
         void setEstadoOrigem(const Estado&);
+        ///Metodo que retorna o objeto CidadeDestino
         Cidade getCidadeDestino() const;
+        ///Metodo que define o objeto CidadeDestino
         void setCidadeDestino(const Cidade&);
+        ///Metodo que retorna o objeto EstadoDestino
         Estado getEstadoDestino() const;
+        ///Metodo que define o objeto EstadoDestino
         void setEstadoDestino(const Estado&);
         Data getData() const;
         void setData(const Data&);
